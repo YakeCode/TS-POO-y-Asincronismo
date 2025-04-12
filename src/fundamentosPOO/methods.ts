@@ -18,7 +18,9 @@ export class MyDate {
   }
 
   get printFormat(): string {
-    return `${this.day}/${this.month}/${this.year}`;
+    const day = this.addPadding(this.day);
+    const month = this.addPadding(this.month);
+    return `${day}/${month}/${this.year}`;
   }
 
   add({ amount, type }: { amount: number; type: dates }) {
@@ -33,19 +35,15 @@ export class MyDate {
     }
   }
 
-  get addPadding(): string{
-    const paddingDay = this.day <= 9 ? `0${this.day}` : this.day
-    const paddingMonth = this.month <= 9 ? `0${this.month}` : this.month
-    const paddingYear = this.year.toString()
-
-      return `${paddingYear}/${paddingMonth}/${paddingDay}`;
+  private addPadding(value: number): string {
+    return value < 10 ? `0${value}` : `${value}`;
   }
 }
 
 const myDate = new MyDate({year:1998, month:11, day:4});
-console.log('myDate:' + myDate.printFormat);
+//console.log('myDate:' + myDate.printFormat);
 
-console.log(myDate.addPadding)
+console.log(myDate.printFormat)
 
 /*myDate.add({amount:3, type:"days"});
 console.log('myDate2: ' +myDate.printFormat);

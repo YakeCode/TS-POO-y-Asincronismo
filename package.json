@@ -1,12 +1,14 @@
 {
   "name": "ts-poo-y-asincronismo",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts": "npx npx tsc --watch",
-    "log": "npx ts-node src/fundamentosPOO/class.ts"
+    "log1": "npx ts-node src/fundamentosPOO/class.ts",
+    "log2": "npx ts-node src/fundamentosPOO/methods.ts"
   },
   "repository": {
     "type": "git",
